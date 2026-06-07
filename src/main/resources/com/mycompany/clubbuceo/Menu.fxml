@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Line?>
+
+<StackPane prefHeight="520" prefWidth="720" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.clubbuceo.MenuController">
+
+    <!-- ═══════════════════════════════════════════════
+         FONDO DEGRADADO OCEÁNICO
+    ═══════════════════════════════════════════════ -->
+    <Pane>
+        <style>
+            -fx-background-color: linear-gradient(
+                to bottom,
+                #0a1628 0%,
+                #0d2744 25%,
+                #0e3d6b 55%,
+                #0b5394 80%,
+                #1a6fad 100%
+            );
+        </style>
+    </Pane>
+
+    <!-- ═══════════════════════════════════════════════
+         CONTENIDO PRINCIPAL
+    ═══════════════════════════════════════════════ -->
+    <VBox alignment="CENTER" spacing="0">
+        <padding><Insets bottom="30" left="50" right="50" top="30" /></padding>
+
+        <!-- ── CABECERA ── -->
+        <VBox alignment="CENTER" spacing="6">
+
+            <!-- Nombre del club -->
+            <Label style="                        -fx-font-family: 'Georgia';                        -fx-font-size: 32px;                        -fx-font-weight: bold;                        -fx-text-fill: #e8f4fd;                        -fx-effect: dropshadow(gaussian, #00c8ff88, 12, 0.4, 0, 2);                        -fx-letter-spacing: 4px;                    " text="PUNTA EL POZO" />
+
+            <!-- Subtítulo -->
+            <Label style="                        -fx-font-family: 'Georgia';                        -fx-font-size: 13px;                        -fx-font-style: italic;                        -fx-text-fill: #7ecfef;                        -fx-letter-spacing: 2px;                    " text="✦  Club de Buceo  ✦" />
+
+            <!-- Separador decorativo -->
+            <Pane prefHeight="10" />
+            <Line endX="320" startX="0" stroke="#2a9fd6" strokeWidth="1.5" style="-fx-effect: dropshadow(gaussian, #2a9fd6, 6, 0.5, 0, 0);" />
+            <Pane prefHeight="8" />
+
+        </VBox>
+
+        <!-- ── SUBTÍTULO SECCIÓN ── -->
+        <Label style="                    -fx-font-family: 'Verdana';                    -fx-font-size: 11px;                    -fx-text-fill: #5ab8e0;                    -fx-letter-spacing: 3px;                " text="GESTIÓN DE BUCEADORES" />
+
+        <Pane prefHeight="20" />
+
+        <!-- ── BOTONES ── -->
+        <VBox alignment="CENTER" maxWidth="360" spacing="12">
+
+            <!-- Botón: Mostrar Buceadores -->
+            <Button fx:id="btnMostrar" onAction="#MostrarBuceadores" prefHeight="48" prefWidth="360" style="                         -fx-background-color: linear-gradient(to right, #0d6eab, #1a8fc7);                         -fx-background-radius: 6px;                         -fx-text-fill: #e8f6ff;                         -fx-font-family: 'Verdana';                         -fx-font-size: 13px;                         -fx-font-weight: bold;                         -fx-cursor: hand;                         -fx-effect: dropshadow(gaussian, #00000055, 8, 0.3, 0, 3);                         -fx-border-color: #2aafdf44;                         -fx-border-radius: 6px;                         -fx-border-width: 1px;                     " text="   🔍   Listar Buceadores">
+                <styleClass>btn-buceo</styleClass>
+            </Button>
+
+            <!-- Botón: Añadir Buceador -->
+            <Button fx:id="btnAnadir" onAction="#AltaBuceador" prefHeight="48" prefWidth="360" style="                         -fx-background-color: linear-gradient(to right, #0a7a4e, #13a368);                         -fx-background-radius: 6px;                         -fx-text-fill: #e6fff4;                         -fx-font-family: 'Verdana';                         -fx-font-size: 13px;                         -fx-font-weight: bold;                         -fx-cursor: hand;                         -fx-effect: dropshadow(gaussian, #00000055, 8, 0.3, 0, 3);                         -fx-border-color: #1de89a33;                         -fx-border-radius: 6px;                         -fx-border-width: 1px;                     " text="  ➕   Alta Buceador     " />
+
+            <!-- Botón: Modificar Buceador -->
+            <Button fx:id="btnModificar" onAction="#ModificarBuceador" prefHeight="48" prefWidth="360" style="                         -fx-background-color: linear-gradient(to right, #7a5a00, #c48b00);                         -fx-background-radius: 6px;                         -fx-text-fill: #fffae6;                         -fx-font-family: 'Verdana';                         -fx-font-size: 13px;                         -fx-font-weight: bold;                         -fx-cursor: hand;                         -fx-effect: dropshadow(gaussian, #00000055, 8, 0.3, 0, 3);                         -fx-border-color: #f0c93044;                         -fx-border-radius: 6px;                         -fx-border-width: 1px;                     " text="      ✏   Modificar Buceador" />
+
+            <!-- Botón: Eliminar Buceador -->
+            <Button fx:id="btnEliminar" onAction="#EliminarBuceador" prefHeight="48" prefWidth="360" style="                         -fx-background-color: linear-gradient(to right, #7a1a1a, #b83232);                         -fx-background-radius: 6px;                         -fx-text-fill: #fff0f0;                         -fx-font-family: 'Verdana';                         -fx-font-size: 13px;                         -fx-font-weight: bold;                         -fx-cursor: hand;                         -fx-effect: dropshadow(gaussian, #00000055, 8, 0.3, 0, 3);                         -fx-border-color: #ff555544;                         -fx-border-radius: 6px;                         -fx-border-width: 1px;                     " text="🗑   Baja Buceador " />
+
+            <!-- Separador antes de cerrar -->
+            <Pane prefHeight="6">
+                <Line endX="300" layoutX="30" layoutY="5" startX="0" stroke="#ffffff18" strokeWidth="1" />
+            </Pane>
+
+            <!-- Botón: Cerrar -->
+            <Button fx:id="btnCerrar" onAction="#Cerrar" prefHeight="44" prefWidth="360" style="-fx-background-color: transparent; -fx-background-radius: 6px; -fx-text-fill: #e8f4fd; -fx-font-family: 'Verdana'; -fx-font-size: 12px; -fx-cursor: hand; -fx-border-color: #e8f4fd; -fx-border-radius: 6px; -fx-border-width: 1.5px;" text="⏻   Cerrar Programa" />
+
+        </VBox>
+
+        <!-- ── PIE ── -->
+        <Pane prefHeight="18" />
+        <Line endX="320" startX="0" stroke="#2a9fd633" strokeWidth="1" />
+        <Pane prefHeight="8" />
+        <Label style="                    -fx-font-family: 'Verdana';                    -fx-font-size: 9px;                    -fx-text-fill: #3a7a9a;                " text="© Punta el Pozo · Todos los derechos reservados" />
+
+    </VBox>
+
+</StackPane>

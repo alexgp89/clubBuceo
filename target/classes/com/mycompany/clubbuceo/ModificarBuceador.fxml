@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<StackPane style="-fx-background-color: linear-gradient(to bottom, #0a1628 0%, #0d2744 25%, #0e3d6b 55%, #0b5394 80%, #1a6fad 100%);" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.clubbuceo.ModificarBuceadorController">
+
+        <VBox alignment="TOP_CENTER" spacing="0" style="-fx-background-color: transparent;">
+        <padding>
+            <Insets bottom="30" left="35" right="35" top="28" />
+        </padding>
+
+                                      <!-- ── CABECERA ── -->
+        <VBox alignment="CENTER" spacing="5">
+            <Label style="-fx-font-family: 'Georgia'; -fx-font-size: 22px; -fx-font-weight: bold; -fx-text-fill: #e8f4fd; -fx-effect: dropshadow(gaussian, #00c8ff88, 10, 0.4, 0, 2);" text="PUNTA EL POZO" />
+            <Label style="-fx-font-family: 'Georgia'; -fx-font-size: 12px; -fx-font-style: italic; -fx-text-fill: #7ecfef;" text="Club de Buceo  -  Modificar Buceador" />
+            <Pane prefHeight="8" />
+            <Line endX="500" startX="0" stroke="#2a9fd6" strokeWidth="1.5" style="-fx-effect: dropshadow(gaussian, #2a9fd6, 6, 0.5, 0, 0);" />
+            <Pane prefHeight="12" />
+        </VBox>
+
+                                      <!-- BUSQUEDA -->
+        <Label style="-fx-font-family: 'Verdana'; -fx-font-size: 10px; -fx-text-fill: #5ab8e0;" text="BUSCAR BUCEADOR" />
+        <Pane prefHeight="8" />
+
+                                      <HBox alignment="CENTER" spacing="14" style="-fx-background-color: #ffffff0a; -fx-background-radius: 8; -fx-border-color: #2a9fd633; -fx-border-radius: 8; -fx-border-width: 1; -fx-padding: 14 24 14 24;">
+            <Label style="-fx-font-family: 'Verdana'; -fx-font-size: 12px; -fx-text-fill: #a8d8f0;" text="ID del buceador:" />
+            <TextField fx:id="txtBuscarId" prefHeight="34" prefWidth="130" promptText="1" style="-fx-background-color: #ffffff12; -fx-background-radius: 5; -fx-border-color: #2a9fd655; -fx-border-radius: 5; -fx-border-width: 1; -fx-text-fill: #e8f4fd; -fx-font-family: 'Verdana'; -fx-font-size: 12px;" />
+            <Button fx:id="btnBuscar" onAction="#Buscar" prefHeight="34" style="-fx-background-color: linear-gradient(to right, #0d6eab, #1a8fc7); -fx-background-radius: 5px; -fx-text-fill: #e8f6ff; -fx-font-family: 'Verdana'; -fx-font-size: 11px; -fx-font-weight: bold; -fx-cursor: hand; -fx-padding: 8 22 8 22;" text="Buscar" />
+        </HBox>
+      <Label fx:id="lbError" alignment="CENTER" style="-fx-font-family: 'Verdana';" textAlignment="CENTER" textFill="RED">
+         <padding>
+            <Insets bottom="10.0" top="10.0" />
+         </padding>
+      </Label>
+        <Line endX="730" startX="0" stroke="#ffffff10" strokeWidth="1" />
+        <Pane prefHeight="10" />
+
+                                      <!-- SECCION 1: DATOS PERSONALES -->
+        <Label style="-fx-font-family: 'Verdana'; -fx-font-size: 10px; -fx-text-fill: #5ab8e0;" text="DATOS PERSONALES" />
+        <Pane prefHeight="8" />
+
+                                      <GridPane alignment="CENTER" hgap="30" vgap="10">
+            <columnConstraints>
+                <ColumnConstraints halignment="LEFT" prefWidth="140" />
+                <ColumnConstraints prefWidth="220" />
+                <ColumnConstraints halignment="LEFT" prefWidth="140" />
+                <ColumnConstraints prefWidth="220" />
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints />
+                <RowConstraints />
+                <RowConstraints />
+            </rowConstraints>
+
+                                          <Label style="-fx-font-family: 'Verdana'; -fx-font-size: 11px; -fx-text-fill: #a8d8f0;" text="DNI :" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+            <TextField fx:id="txtDni" editable="false" maxWidth="220" prefHeight="34" promptText="12345678A" style="-fx-background-color: #ffffff12; -fx-background-radius: 5; -fx-border-color: #2a9fd655; -fx-border-radius: 5; -fx-border-width: 1; -fx-text-fill: #e8f4fd; -fx-font-family: 'Verdana'; -fx-font-size: 11px;" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+
+                                          <Label style="-fx-font-family: 'Verdana'; -fx-font-size: 11px; -fx-text-fill: #a8d8f0;" text="Nombre:" GridPane.columnIndex="2" GridPane.rowIndex="0" />
+            <TextField fx:id="txtNombre" maxWidth="220" prefHeight="34" promptText="Juan" style="-fx-background-color: #ffffff12; -fx-background-radius: 5; -fx-border-color: #2a9fd655; -fx-border-radius: 5; -fx-border-width: 1; -fx-text-fill: #e8f4fd; -fx-font-family: 'Verdana'; -fx-font-size: 11px;" GridPane.columnIndex="3" GridPane.rowIndex="0" />
+
+                                          <Label style="-fx-font-family: 'Verdana'; -fx-font-size: 11px; -fx-text-fill: #a8d8f0;" text="Apellidos:" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+            <TextField fx:id="txtApellidos" maxWidth="220" prefHeight="34" promptText="Garcia Lopez" style="-fx-background-color: #ffffff12; -fx-background-radius: 5; -fx-border-color: #2a9fd655; -fx-border-radius: 5; -fx-border-width: 1; -fx-text-fill: #e8f4fd; -fx-font-family: 'Verdana'; -fx-font-size: 11px;" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+
+                                          <Label style="-fx-font-family: 'Verdana'; -fx-font-size: 11px; -fx-text-fill: #a8d8f0;" text="F. Nacimiento:" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+            <DatePicker fx:id="dpFechaNacimiento" maxWidth="220" prefHeight="34" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+
+                                          <Label style="-fx-font-family: 'Verdana'; -fx-font-size: 11px; -fx-text-fill: #a8d8f0;" text="Email:" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+            <TextField fx:id="txtEmail" maxWidth="220" prefHeight="34" promptText="correo@email.com" style="-fx-background-color: #ffffff12; -fx-background-radius: 5; -fx-border-color: #2a9fd655; -fx-border-radius: 5; -fx-border-width: 1; -fx-text-fill: #e8f4fd; -fx-font-family: 'Verdana'; -fx-font-size: 11px;" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+
+                                          <Label style="-fx-font-family: 'Verdana'; -fx-font-size: 11px; -fx-text-fill: #a8d8f0;" text="Telefono (+34):" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+            <TextField fx:id="txtTelefono" maxWidth="220" prefHeight="34" promptText="612345678" style="-fx-background-color: #ffffff12; -fx-background-radius: 5; -fx-border-color: #2a9fd655; -fx-border-radius: 5; -fx-border-width: 1; -fx-text-fill: #e8f4fd; -fx-font-family: 'Verdana'; -fx-font-size: 11px;" GridPane.columnIndex="3" GridPane.rowIndex="2" />
+        </GridPane>
+
+                                      <Pane prefHeight="12" />
+        <Line endX="730" startX="0" stroke="#ffffff18" strokeWidth="1" />
+        <Pane prefHeight="10" />
+
+                                      <!-- SECCION 2: DATOS DE BUCEO -->
+        <Label style="-fx-font-family: 'Verdana'; -fx-font-size: 10px; -fx-text-fill: #5ab8e0;" text="DATOS DE BUCEO" />
+        <Pane prefHeight="8" />
+
+                                      <GridPane alignment="CENTER" hgap="30" vgap="10">
+            <columnConstraints>
+                <ColumnConstraints halignment="LEFT" prefWidth="140" />
+                <ColumnConstraints prefWidth="220" />
+                <ColumnConstraints halignment="LEFT" prefWidth="140" />
+                <ColumnConstraints prefWidth="220" />
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints />
+                <RowConstraints />
+            </rowConstraints>
+
+                                          <Label style="-fx-font-family: 'Verdana'; -fx-font-size: 11px; -fx-text-fill: #a8d8f0;" text="Titulacion:" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+            <ComboBox fx:id="cmbTitulacion" maxWidth="220" prefHeight="34" promptText="Seleccionar..." style="-fx-background-color: #ffffff12; -fx-background-radius: 5; -fx-border-color: #2a9fd655; -fx-border-radius: 5; -fx-border-width: 1; -fx-font-family: 'Verdana'; -fx-font-size: 11px;" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+
+                                          <Label style="-fx-font-family: 'Verdana'; -fx-font-size: 11px; -fx-text-fill: #a8d8f0;" text="Organizacion:" GridPane.columnIndex="2" GridPane.rowIndex="0" />
+            <ComboBox fx:id="cmbOrganizacion" maxWidth="220" prefHeight="34" promptText="Seleccionar..." style="-fx-background-color: #ffffff12; -fx-background-radius: 5; -fx-border-color: #2a9fd655; -fx-border-radius: 5; -fx-border-width: 1; -fx-font-family: 'Verdana'; -fx-font-size: 11px;-fx-text-fill: #5ab8e0;" GridPane.columnIndex="3" GridPane.rowIndex="0" />
+
+                                          <Label style="-fx-font-family: 'Verdana'; -fx-font-size: 11px; -fx-text-fill: #a8d8f0;" text="Num. inmersiones:" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+            <TextField fx:id="txtInmersiones" maxWidth="220" prefHeight="34" promptText="0" style="-fx-background-color: #ffffff12; -fx-background-radius: 5; -fx-border-color: #2a9fd655; -fx-border-radius: 5; -fx-border-width: 1; -fx-text-fill: #e8f4fd; -fx-font-family: 'Verdana'; -fx-font-size: 11px;" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+        </GridPane>
+
+                                      <Pane prefHeight="12" />
+        <Line endX="730" startX="0" stroke="#ffffff18" strokeWidth="1" />
+        <Pane prefHeight="10" />
+
+                                      <!-- SECCION 3: DATOS MEDICOS -->
+        <Label style="-fx-font-family: 'Verdana'; -fx-font-size: 10px; -fx-text-fill: #5ab8e0;" text="DATOS MEDICOS" />
+        <Pane prefHeight="8" />
+
+                                      <GridPane alignment="CENTER" hgap="30" vgap="10">
+            <columnConstraints>
+                <ColumnConstraints halignment="LEFT" prefWidth="140" />
+                <ColumnConstraints prefWidth="220" />
+                <ColumnConstraints halignment="LEFT" prefWidth="140" />
+                <ColumnConstraints prefWidth="220" />
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints />
+                <RowConstraints />
+            </rowConstraints>
+
+                                          <Label style="-fx-font-family: 'Verdana'; -fx-font-size: 11px; -fx-text-fill: #a8d8f0;" text="Grupo sanguineo:" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+            <ComboBox fx:id="cmbGrupoSanguineo" maxWidth="220" prefHeight="34" promptText="Seleccionar..." style="-fx-background-color: #ffffff12; -fx-background-radius: 5; -fx-border-color: #2a9fd655; -fx-border-radius: 5; -fx-border-width: 1; -fx-font-family: 'Verdana'; -fx-font-size: 11px;" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+
+                                          <Label style="-fx-font-family: 'Verdana'; -fx-font-size: 11px; -fx-text-fill: #a8d8f0;" text="Rec. medico:" GridPane.columnIndex="2" GridPane.rowIndex="0" />
+            <DatePicker fx:id="dpFechaReconocimiento" maxWidth="220" prefHeight="34" GridPane.columnIndex="3" GridPane.rowIndex="0" />
+
+                                          <Label style="-fx-font-family: 'Verdana'; -fx-font-size: 11px; -fx-text-fill: #a8d8f0;" text="Alergias:" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+            <TextField fx:id="txtAlergias" maxWidth="220" prefHeight="34" promptText="Ninguna" style="-fx-background-color: #ffffff12; -fx-background-radius: 5; -fx-border-color: #2a9fd655; -fx-border-radius: 5; -fx-border-width: 1; -fx-text-fill: #e8f4fd; -fx-font-family: 'Verdana'; -fx-font-size: 11px;" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+        </GridPane>
+
+                                      <Pane prefHeight="12" />
+        <Line endX="730" startX="0" stroke="#ffffff18" strokeWidth="1" />
+        <Pane prefHeight="10" />
+
+                                      <!-- SECCION 4: SEGURO -->
+        <Label style="-fx-font-family: 'Verdana'; -fx-font-size: 10px; -fx-text-fill: #5ab8e0;" text="SEGURO DE BUCEO" />
+        <Pane prefHeight="8" />
+
+                                      <GridPane alignment="CENTER" hgap="30" vgap="10">
+            <columnConstraints>
+                <ColumnConstraints halignment="LEFT" prefWidth="140" />
+                <ColumnConstraints prefWidth="220" />
+                <ColumnConstraints halignment="LEFT" prefWidth="140" />
+                <ColumnConstraints prefWidth="220" />
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints />
+            </rowConstraints>
+
+                                          <Label style="-fx-font-family: 'Verdana'; -fx-font-size: 11px; -fx-text-fill: #a8d8f0;" text="Compania:" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+            <TextField fx:id="txtCompaniaSeguro" maxWidth="220" prefHeight="34" promptText="Mapfre, AXA..." style="-fx-background-color: #ffffff12; -fx-background-radius: 5; -fx-border-color: #2a9fd655; -fx-border-radius: 5; -fx-border-width: 1; -fx-text-fill: #e8f4fd; -fx-font-family: 'Verdana'; -fx-font-size: 11px;" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+
+                                          <Label style="-fx-font-family: 'Verdana'; -fx-font-size: 11px; -fx-text-fill: #a8d8f0;" text="Fecha caducidad:" GridPane.columnIndex="2" GridPane.rowIndex="0" />
+            <DatePicker fx:id="dpFechaCaducidadSeguro" maxWidth="220" prefHeight="34" GridPane.columnIndex="3" GridPane.rowIndex="0" />
+        </GridPane>
+
+                                      <Pane prefHeight="12" />
+        <Line endX="730" startX="0" stroke="#ffffff18" strokeWidth="1" />
+        <Pane prefHeight="10" />
+
+                                      <!-- SECCION 5: CONTACTO EMERGENCIA -->
+        <Label style="-fx-font-family: 'Verdana'; -fx-font-size: 10px; -fx-text-fill: #5ab8e0;" text="CONTACTO DE EMERGENCIA" />
+        <Pane prefHeight="8" />
+
+                                      <GridPane alignment="CENTER" hgap="30" vgap="10">
+            <columnConstraints>
+                <ColumnConstraints halignment="LEFT" prefWidth="140" />
+                <ColumnConstraints prefWidth="220" />
+                <ColumnConstraints halignment="LEFT" prefWidth="140" />
+                <ColumnConstraints prefWidth="220" />
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints />
+            </rowConstraints>
+
+                                          <Label style="-fx-font-family: 'Verdana'; -fx-font-size: 11px; -fx-text-fill: #a8d8f0;" text="Nombre:" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+            <TextField fx:id="txtContEmergNombre" maxWidth="220" prefHeight="34" promptText="Nombre completo" style="-fx-background-color: #ffffff12; -fx-background-radius: 5; -fx-border-color: #2a9fd655; -fx-border-radius: 5; -fx-border-width: 1; -fx-text-fill: #e8f4fd; -fx-font-family: 'Verdana'; -fx-font-size: 11px;" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+
+                                          <Label style="-fx-font-family: 'Verdana'; -fx-font-size: 11px; -fx-text-fill: #a8d8f0;" text="Telefono (+34):" GridPane.columnIndex="2" GridPane.rowIndex="0" />
+            <TextField fx:id="txtContEmergTelf" maxWidth="220" prefHeight="34" promptText="612345678" style="-fx-background-color: #ffffff12; -fx-background-radius: 5; -fx-border-color: #2a9fd655; -fx-border-radius: 5; -fx-border-width: 1; -fx-text-fill: #e8f4fd; -fx-font-family: 'Verdana'; -fx-font-size: 11px;" GridPane.columnIndex="3" GridPane.rowIndex="0" />
+        </GridPane>
+      <Label fx:id="lbConfirmacion" alignment="CENTER" style="-fx-font-family: 'Verdana';" textAlignment="CENTER" textFill="#05ff00">
+         <padding>
+            <Insets bottom="10.0" top="10.0" />
+         </padding>
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+
+                                      <!-- BOTONES -->
+        <HBox alignment="CENTER" spacing="16">
+            <Button fx:id="btnGuardar" disable="true" onAction="#Guardar" prefHeight="42" style="-fx-background-color: linear-gradient(to right, #0a7a4e, #13a368); -fx-background-radius: 6px; -fx-text-fill: #e6fff4; -fx-font-family: 'Verdana'; -fx-font-size: 12px; -fx-font-weight: bold; -fx-cursor: hand; -fx-padding: 10 28 10 28; -fx-effect: dropshadow(gaussian, #00000055, 8, 0.3, 0, 3);" text="Guardar cambios" />
+
+                                          <Button fx:id="btnVolver" onAction="#Volver" prefHeight="42" style="-fx-background-color: transparent; -fx-background-radius: 6px; -fx-text-fill: #e8f4fd; -fx-font-family: 'Verdana'; -fx-font-size: 12px; -fx-cursor: hand; -fx-border-color: #e8f4fd; -fx-border-radius: 6px; -fx-border-width: 1.5px; -fx-padding: 10 24 10 24;" text="Volver al Menu" />
+        </HBox>
+
+                                      <!-- PIE -->
+        <Pane prefHeight="14" />
+        <Line endX="500" startX="0" stroke="#2a9fd633" strokeWidth="1" />
+        <Pane prefHeight="8" />
+        <Label style="-fx-font-family: 'Verdana'; -fx-font-size: 9px; -fx-text-fill: #3a7a9a;" text="© Punta el Pozo · Todos los derechos reservados" />
+
+                                  </VBox>
+
+</StackPane>
