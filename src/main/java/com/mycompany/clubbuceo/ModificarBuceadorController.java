@@ -160,7 +160,7 @@ public class ModificarBuceadorController implements Initializable {
     private void Guardar(ActionEvent event) {
         // Crea un objeto buceador con los nuevos datos del formulario
         try{
-            
+
             Buceador modificado = new Buceador(
                     Integer.parseInt(txtTelefono.getText()),
                     Integer.parseInt(txtContEmergTelf.getText()),

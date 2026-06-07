@@ -36,7 +36,7 @@ public class EliminarBuceadorController implements Initializable {
     private TextArea taResultado;
 
     // Almacena el id del buceador encontrado para compartirlo entre Buscar y Eliminar
-    private static Integer idBuscado;
+    private static int idBuscado;
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {        
@@ -46,13 +46,18 @@ public class EliminarBuceadorController implements Initializable {
     // Habilita el botón Eliminar solo si se encuentra; lo deshabilita si no existe.
     @FXML
     private void Buscar(ActionEvent event) {
-        if(BuceadorDAO.listarTodos().containsKey(Integer.parseInt(txtId.getText()))){
-            idBuscado = Integer.parseInt(txtId.getText());
+        
+        idBuscado = Integer.parseInt(txtId.getText());
+        if(BuceadorDAO.listarTodos().containsKey(idBuscado)){
+            
             taResultado.setText(BuceadorDAO.listarTodos().get(idBuscado).toString());
             btnEliminar.setDisable(false);
+            
         }else{
+            
             taResultado.setText("No se ha encontrado ningun buceador con ese ID");
             btnEliminar.setDisable(true);
+            
         }
     }
 
