@@ -130,7 +130,7 @@ public class Buceador implements Serializable, Comparable<Buceador>{
         this.id = id;
     }
 
-    // Valida que el teléfono tenga exactamente 9 dígitos (Prefijo españa)
+    // Valida que el teléfono tenga exactamente 9 dígitos
     public void setTelefono(int telefono) {
         
         if(String.valueOf(telefono).length() != 9){
