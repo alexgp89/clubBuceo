@@ -31,11 +31,11 @@ USE `clubbuceo`;
 
 CREATE TABLE `buceadores` (
   `id_buceador` int(11) NOT NULL,
-  `dni` varchar(20) NOT NULL,
+  `dni` varchar(9) NOT NULL,
   `nombre` varchar(50) NOT NULL,
   `apellidos` varchar(100) NOT NULL,
   `email` varchar(100) NOT NULL,
-  `telefono` int(11) NOT NULL,
+  `telefono` int(9) NOT NULL,
   `fecha_nacimiento` date NOT NULL,
   `fecha_alta` date NOT NULL,
   `titulacion` enum('OpenWater','Advance','Rescue','Otro') NOT NULL,
@@ -47,7 +47,7 @@ CREATE TABLE `buceadores` (
   `compania_seguro` varchar(100) NOT NULL,
   `fecha_cad_seguro` date NOT NULL,
   `cont_emerg_nombre` varchar(150) NOT NULL,
-  `cont_emerg_telf` int(11) NOT NULL
+  `cont_emerg_telf` int(9) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
