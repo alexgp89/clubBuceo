@@ -165,46 +165,46 @@ public class Buceador implements Serializable, Comparable<Buceador>{
 
     // Valida que el atributo no esté vacio
     public void setNombre(String nombre) {
-        if(nombre == null || nombre.equals("")){
+        if(nombre == null || nombre.trim().isEmpty()){
             throw new IllegalArgumentException("No se ha indicado nombre");
         }else{
-            this.nombre = nombre;
+            this.nombre = nombre.trim().toUpperCase();
         }
     }
 
     // Valida que el atributo no esté vacio
     public void setApellidos(String apellidos) {
-        if(apellidos == null || apellidos.equals("")){
+        if(apellidos == null || apellidos.trim().isEmpty()){
             throw new IllegalArgumentException("No se ha indicado apellidos");
         }else{
-            this.apellidos = apellidos;
+            this.apellidos = apellidos.trim().toUpperCase();
         }
     }
 
     // Valida que el email contenga '@' y '.'
     public void setEmail(String email) {
-        if(email.contains("@") && email.contains(".")){
-            this.email = email;
-        }else{
+        if(!email.contains("@") && !email.contains(".")){
             throw new IllegalArgumentException("Email invalido. El email debe contener al menos '@' y '.'");
+        }else{
+            this.email = email.trim();
         }
     }
 
     // Valida que el atributo no esté vacio
     public void setCompaniaSeguro(String companiaSeguro) {
-        if(companiaSeguro == null || companiaSeguro.equals("")){
+        if(companiaSeguro == null || companiaSeguro.trim().isEmpty()){
             throw new IllegalArgumentException("No se ha indicado compania de seguro");
         }else{
-            this.companiaSeguro = companiaSeguro;
+            this.companiaSeguro = companiaSeguro.trim().toUpperCase();
         }
     }
 
     // Valida que el atributo no esté vacio
     public void setContEmergNombre(String contEmergNombre) {
-        if(contEmergNombre == null || contEmergNombre.equals("")){
+        if(contEmergNombre == null || contEmergNombre.trim().isEmpty()){
             throw new IllegalArgumentException("No se ha indicado nombre del contacto de emergencia");
         }
-        this.contEmergNombre = contEmergNombre;
+        this.contEmergNombre = contEmergNombre.trim().toUpperCase();
     }
 
     public void setGrupoSanguineo(String grupoSanguineo) {
@@ -213,10 +213,10 @@ public class Buceador implements Serializable, Comparable<Buceador>{
 
     // Si no se indica ninguna alergia, se asigna "Ninguna" por defecto
     public void setAlergias(String alergias) {
-        if(alergias == null || alergias.equals("")){
+        if(alergias == null || alergias.trim().isEmpty()){
             this.alergias = "Ninguna";
         }else{
-            this.alergias = alergias;
+            this.alergias = alergias.trim();
         }
     }
 
@@ -229,7 +229,11 @@ public class Buceador implements Serializable, Comparable<Buceador>{
     }
 
     public void setFechaNacimiento(LocalDate fechaNacimiento) {
-        this.fechaNacimiento = fechaNacimiento;
+        if(fechaNacimiento == null){
+            throw new IllegalArgumentException("No se ha indicado fecha de nacimiento");
+        }else{
+            this.fechaNacimiento = fechaNacimiento;
+        }
     }
 
     public void setFechaAlta(LocalDate fechaAlta) {
@@ -237,11 +241,19 @@ public class Buceador implements Serializable, Comparable<Buceador>{
     }
 
     public void setFechaReconocimiento(LocalDate fechaReconocimiento) {
-        this.fechaReconocimiento = fechaReconocimiento;
+        if(fechaReconocimiento == null){
+            throw new IllegalArgumentException("No se ha indicado fecha de reconocimiento medico");
+        }else{
+            this.fechaReconocimiento = fechaReconocimiento;
+        }
     }
 
     public void setFechaCaducidadSeguro(LocalDate fechaCaducidadSeguro) {
-        this.fechaCaducidadSeguro = fechaCaducidadSeguro;
+        if(fechaCaducidadSeguro == null){
+            throw new IllegalArgumentException("No se ha indicado fecha de caducidad del seguro");
+        }else{
+            this.fechaCaducidadSeguro = fechaCaducidadSeguro;
+        }
     }
      
     // Dos buceadores son iguales si tienen el mismo DNI

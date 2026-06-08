@@ -55,9 +55,9 @@ CREATE TABLE `buceadores` (
 --
 
 INSERT INTO `buceadores` (`id_buceador`, `dni`, `nombre`, `apellidos`, `email`, `telefono`, `fecha_nacimiento`, `fecha_alta`, `titulacion`, `organizacion`, `num_inmersiones`, `grupo_sanguineo`, `alergias`, `fecha_reconocimiento`, `compania_seguro`, `fecha_cad_seguro`, `cont_emerg_nombre`, `cont_emerg_telf`) VALUES
-(1, '12345678B', 'Juan', 'Garcia Lopez', 'juan.garcia@gmail.com', 123456789, '1990-05-14', '2023-01-10', 'Advance', 'PADI', 87, 'A+', 'Ninguna', '2024-11-20', 'Mapfre', '2025-12-31', 'Maria Lopez', 698111222),
-(2, '87654321B', 'Laura', 'Martinez Ruiz', 'laura.martinez@hotmail.com', 634987654, '1985-03-22', '2021-06-15', 'Otro', 'SSI', 30, 'O-', 'Paracetamol', '2024-09-05', 'Axa', '2026-03-14', 'Jose Tomas', 611154325),
-(3, '12345678C', 'Ahmed', 'Ben Salah', 'ahmed.bensalah@gmail.com', 123246345, '2000-08-30', '2024-04-02', 'OpenWater', 'CMAS', 15, 'B+', 'Latex, Ibuprofeno', '2024-04-01', 'Allianz', '2025-04-01', 'Fatima Ben Salah', 655444555);
+(1, '12345678B', 'JUAN', 'GARCIA LOPEZ', 'juan.garcia@gmail.com', 123456789, '1990-05-14', '2023-01-10', 'Advance', 'PADI', 87, 'A+', 'Ninguna', '2024-11-20', 'Mapfre', '2025-12-31', 'MARIA LOPEZ', 698111222),
+(2, '87654321B', 'LAURA', 'MARTINEZ', 'laura.martinez@hotmail.com', 634987654, '1985-03-22', '2021-06-15', 'Otro', 'SSI', 30, 'O-', 'Paracetamol', '2024-09-05', 'Axa', '2026-03-14', 'JOSE TOMAS', 611154325),
+(3, '12345678C', 'AHMED', 'BEN SALAH', 'ahmed.bensalah@gmail.com', 123246345, '2000-08-30', '2024-04-02', 'OpenWater', 'CMAS', 15, 'B+', 'Latex, Ibuprofeno', '2024-04-01', 'Allianz', '2025-04-01', 'FATIMA BEN SALAH', 655444555);
 
 --
 -- Índices para tablas volcadas

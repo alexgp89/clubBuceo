@@ -121,6 +121,7 @@ public class AltaBuceadorController implements Initializable {
             // Se comprueba si ya existe un buceador con ese DNI antes de insertar
             if(BuceadorDAO.listarTodos().containsValue(b1)){
                 
+                lbConfirmacion.setText(null);
                 lbError.setText("Error. Ya existe un buceador con ese DNI.");
 
             }else if(BuceadorDAO.insertar(b1)){
